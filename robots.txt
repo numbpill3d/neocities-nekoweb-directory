@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://numbpill3d.github.io/neocities-nekoweb-directory/sitemap.xml
