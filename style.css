@@ -1,20 +1,20 @@
 /* retro webcore brutalist: OG Macintosh meets Linux rice terminal BBS core */
-:root {
-  --bg: #0a0e0a;
-  --bg2: #0f140f;
-  --panel: #111811;
-  --ink: #c7f7c7;
-  --ink-dim: #6fbf6f;
-  --amber: #ffb347;
-  --red: #ff5a5a;
-  --blue: #7aa2ff;
-  --border: #2a3a2a;
-  --border-bright: #4a6a4a;
-  --mac-white: #e8e8e8;
-  --mac-black: #1a1a1a;
+':root {
+  --bg: #1a1612;
+  --bg2: #221d17;
+  --panel: #2a241c;
+  --ink: #d8d2c4;
+  --ink-dim: #9a9284;
+  --amber: #9bb37a;
+  --red: #c47a5a;
+  --blue: #8aa0b8;
+  --border: #3a332a;
+  --border-bright: #5a5040;
+  --mac-white: #cfc6b4;
+  --mac-black: #14110d;
   --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Mono", "IBM Plex Mono", "Menlo", "Consolas", monospace;
   --font-mac: "Chicago", "Geneva", "Lucida Grande", "Helvetica Neue", sans-serif;
-  --scan: rgba(0, 0, 0, 0.18);
+  --scan: rgba(0, 0, 0, 0.22);
 }
 
 * { box-sizing: border-box; }
