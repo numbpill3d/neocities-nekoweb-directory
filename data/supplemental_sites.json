@@ -48,5 +48,20 @@
       "art"
     ],
     "source": "supplemental"
+  },
+  {
+    "name": "numbpilled",
+    "url": "https://numbpilled.neocities.org",
+    "description": "...",
+    "category": "personal",
+    "tags": [
+      "dark",
+      "brooding",
+      "blog",
+      "deep",
+      "surreal"
+    ],
+    "button": null,
+    "source": "supplemental"
   }
 ]
