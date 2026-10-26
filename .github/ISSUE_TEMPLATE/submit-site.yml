@@ -1,0 +1,66 @@
+name: Submit a site
+description: Submit a Neocities or Nekoweb site to the directory
+title: "[Site] "
+labels: ["site-submission"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Site name
+      placeholder: "My Retro Site"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Site URL
+      placeholder: "https://example.neocities.org"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      placeholder: "What is this site about?"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - personal
+        - blog
+        - portfolio
+        - art
+        - tools
+        - games
+        - zine
+        - resources
+        - other
+    validations:
+      required: true
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      placeholder: "retro, webcore, terminal"
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - neocities
+        - nekoweb
+        - other
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirm
+      options:
+        - label: This is a real, publicly-accessible personal site.
+          required: true

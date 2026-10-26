@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEOCITIES/NEKOWEB DIRECTORY — retro webcore bbs</title>
+<meta name="description" content="A brutalist, auto-updating directory of Neocities and Nekoweb sites. Submit yours.">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="menubar">
+  <span class="apple">&#63743;</span>
+  <span class="menu">File</span>
+  <span class="menu">Edit</span>
+  <span class="menu">View</span>
+  <span class="menu">Sites</span>
+  <span class="menu">BBS</span>
+  <span class="spacer"></span>
+  <span class="clock" id="clock"></span>
+</div>
+
+<header class="hero">
+  <h1>NEOCITIES / NEKOWEB DIRECTORY</h1>
+  <p class="sub">a brutalist, auto-updating index of the indie web. macintosh chrome, linux rice, terminal bbs core. submit your site. no ads. no tracking. just links.</p>
+  <p class="prompt">ls ./sites --sort=updated --filter=webcore</p>
+  <div class="ascii">┌──────────────────────────────────────────────────────────────┐
+│  [A]ll  [N]eocities  [K]ekoweb  [R]etro  [T]erminal  [B]BS   │
+│  type to search · click a tag · press / to focus              │
+└──────────────────────────────────────────────────────────────┘</div>
+</header>
+
+<div class="wrap">
+  <aside class="sidebar">
+    <div class="window">
+      <div class="titlebar"><span class="close"></span><span>categories.sys</span><span class="zoom">_ □ ×</span></div>
+      <div class="body">
+        <h3>Categories</h3>
+        <ul class="cat-list" id="cat-list"></ul>
+      </div>
+    </div>
+    <div class="window">
+      <div class="titlebar"><span class="close"></span><span>tags.idx</span><span class="zoom">_ □ ×</span></div>
+      <div class="body">
+        <h3>Top tags</h3>
+        <div id="tag-cloud" style="display:flex;flex-wrap:wrap;gap:4px;"></div>
+      </div>
+    </div>
+    <div class="window">
+      <div class="titlebar"><span class="close"></span><span>stats.txt</span><span class="zoom">_ □ ×</span></div>
+      <div class="body">
+        <div class="stats" style="flex-direction:column;gap:4px;">
+          <div>sites: <b id="total">0</b></div>
+          <div>shown: <b id="count">0</b></div>
+          <div>mode: <b id="shown-label">all</b></div>
+          <div>generated: <b id="generated">—</b></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div class="search">
+      <span class="caret">&gt;</span>
+      <input id="search" type="text" placeholder="search sites, tags, urls…" autocomplete="off">
+      <button id="clear" class="btn" style="padding:2px 8px;box-shadow:none;">clear</button>
+    </div>
+
+    <div class="stats">
+      <span>directory :: <b id="count2">0</b> / <b id="total2">0</b></span>
+      <span>filter :: <b id="shown-label2">all</b></span>
+      <span>updated :: <b id="generated2">—</b></span>
+    </div>
+
+    <div class="entries" id="entries">
+      <!-- prerender:start -->
+<div class="item"><div class="top"><a class="name" href="https://nekoweb.org">Nekoweb</a> <span class="badge">prerender</span></div><div class="desc">A free static site host for the modern web, with a friendly community and no ads.</div></div>
+<div class="item"><div class="top"><a class="name" href="https://neocities.org">Neocities</a> <span class="badge">prerender</span></div><div class="desc">The home of the free web. Host your own site, discover others, and keep the independent web alive.</div></div>
+<div class="item"><div class="top"><a class="name" href="https://sadgrl.online">sadgrl.online</a> <span class="badge">prerender</span></div><div class="desc">Resources, layouts, and guides for building personal sites in the indie web style.</div></div>
+        <!-- prerender:end -->
+    </div>
+
+    <section class="submit">
+      <h3>SUBMIT YOUR SITE</h3>
+      <p>no PR skills required. open an issue, fill the form, an action validates + opens a PR.</p>
+      <ol>
+        <li>Open <a href="https://github.com/numbpill3d/neocities-nekoweb-directory/issues/new?template=submit-site.yml" target="_blank" rel="noopener">Issues → New issue → "Submit a site"</a>.</li>
+        <li>Fill: site name, URL, description, category, tags, platform.</li>
+        <li>An action validates the URL, rejects duplicates, opens a PR into <code>data/supplemental_sites.json</code>.</li>
+        <li>Maintainer merges → next daily run regenerates <code>data/sites.json</code>.</li>
+      </ol>
+      <a class="btn" href="https://github.com/numbpill3d/neocities-nekoweb-directory/issues/new?template=submit-site.yml" target="_blank" rel="noopener">[ submit site ]</a>
+    </section>
+  </main>
+</div>
+
+<footer class="footer">
+  retro webcore brutalist directory · macintosh chrome · linux rice · terminal bbs core ·
+  data: <a href="./data/sites.json">sites.json</a> ·
+  <a href="https://github.com/numbpill3d/neocities-nekoweb-directory">source</a>
+</footer>
+
+<script src="./app.js"></script>
+<script>
+// clock
+function tick(){ const d=new Date(); document.getElementById('clock').textContent = d.toLocaleTimeString('en-GB',{hour12:false}); }
+setInterval(tick,1000); tick();
+// mirror stats
+const oRender = window.render;
+</script>
+</body>
+</html>
