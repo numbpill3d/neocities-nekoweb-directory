@@ -11,6 +11,7 @@ permissions:
   issues: write
   pull-requests: write
   contents: write
+  actions: write
 
 concurrency:
   group: triage-site-submission-${{ github.event.issue.number || 'sweep' }}

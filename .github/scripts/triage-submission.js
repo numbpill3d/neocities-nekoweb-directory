@@ -126,23 +126,9 @@ async function run({ github, context, core }) {
     source: "supplemental",
   };
 
-  // ensure branch exists
-  let branchSha = null;
-  try {
-    const ref = await github.rest.git.getRef({ ...repo, ref: `heads/${branch}` });
-    branchSha = ref.data.object.sha;
-  } catch (e) {
-    if (e.status !== 404) throw e;
-  }
-  if (!branchSha) {
-    const baseRef = await github.rest.git.getRef({ ...repo, ref: `heads/${base}` });
-    await github.rest.git.createRef({ ...repo, ref: `refs/heads/${branch}`, sha: baseRef.data.object.sha });
-  }
-
-  // read current supplemental on branch
-  const current = await readJson(github, repo, "data/supplemental_sites.json", branch, []);
+  // Auto-add: commit directly to the base branch (no PR / no manual merge).
+  const current = await readJson(github, repo, "data/supplemental_sites.json", base, []);
   const list = Array.isArray(current.value) ? current.value : [];
-  // remove any previous entry from this issue? keep simple: append if not present
   if (!list.find(s => normalizeUrl(s.url) === normalizeUrl(submission.url))) {
     list.push(entry);
   }
@@ -150,27 +136,25 @@ async function run({ github, context, core }) {
   await github.rest.repos.createOrUpdateFileContents({
     ...repo,
     path: "data/supplemental_sites.json",
-    message: `feat: add site submission #${issueNumber}`,
+    message: `feat: auto-add site submission #${issueNumber} (${submission.name})`,
     content,
-    branch,
+    branch: base,
     sha: current.sha || undefined,
   });
 
-  // create or update PR
-  const pulls = await github.paginate(github.rest.pulls.list, { ...repo, state: "open", base, per_page: 100 });
-  const existingPr = pulls.find(p => p.head.ref === branch);
-  if (existingPr) {
-    await setStatus(github, repo, issueNumber, `✅ Submission updated. PR: #${existingPr.number}`);
-  } else {
-    const pr = await github.rest.pulls.create({
+  // Trigger the data regeneration workflow so the new site appears promptly.
+  try {
+    await github.rest.actions.createWorkflowDispatch({
       ...repo,
-      title: `[Site] ${submission.name}`,
-      head: branch,
-      base,
-      body: `Closes #${issueNumber}\n\nSubmitted via issue form.`,
+      workflow_id: "update.yml",
+      ref: base,
     });
-    await setStatus(github, repo, issueNumber, `✅ Submission accepted. PR opened: #${pr.data.number}\n\nA maintainer will review and merge.`);
+  } catch (e) {
+    core.warning(`could not trigger update workflow: ${e.message}`);
   }
+
+  await setStatus(github, repo, issueNumber, `✅ Added automatically to the directory.\n\nThe site will appear in data/sites.json after the next update run (triggered now). Issue closed.`);
+  try { await github.rest.issues.update({ ...repo, issue_number: issueNumber, state: "closed" }); } catch (e) { core.warning(e.message); }
 }
 
 module.exports = { run };
