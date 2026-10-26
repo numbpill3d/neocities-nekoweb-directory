@@ -48,6 +48,7 @@ def read_supplemental() -> List[Dict[str, Any]]:
             "category": str(item.get("category") or "other").strip(),
             "tags": [str(t).strip() for t in (item.get("tags") or []) if str(t).strip()],
             "source": str(item.get("source") or "supplemental").strip(),
+            "button": item.get("button"),
             "last_updated": item.get("last_updated"),
         })
     return out
@@ -114,6 +115,7 @@ def main() -> int:
             "category": s["category"] or "other",
             "tags": s["tags"],
             "source": s["source"],
+            "button": s.get("button"),
             "last_updated": last,
         })
 

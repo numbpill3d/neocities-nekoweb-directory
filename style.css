@@ -309,3 +309,40 @@ a:hover { color: var(--red); border-bottom-color: var(--red); }
 /* Loading */
 .loading { color: var(--amber); font-style: italic; }
 .empty { color: var(--ink-dim); font-style: italic; padding: 20px 0; }
+
+/* 88x32 button wall */
+.button-wall {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  max-height: 260px;
+  overflow-y: auto;
+  padding-right: 4px;
+  border: 1px solid var(--border);
+  background: #000;
+  padding: 6px;
+}
+.button-wall img {
+  width: 88px;
+  height: 32px;
+  image-rendering: pixelated;
+  border: 1px solid var(--border-bright);
+  background: #000;
+  display: block;
+  margin: 0 auto;
+}
+.button-wall a { border: none; display: block; text-align: center; }
+.button-wall .empty { grid-column: 1 / -1; color: var(--ink-dim); font-style: italic; font-size: 11px; }
+
+/* button in entry */
+.entry .site-button {
+  margin: 6px 0 4px;
+}
+.entry .site-button img {
+  width: 88px;
+  height: 32px;
+  image-rendering: pixelated;
+  border: 1px solid var(--border-bright);
+  background: #000;
+  display: block;
+}

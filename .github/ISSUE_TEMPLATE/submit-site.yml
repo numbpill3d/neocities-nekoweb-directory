@@ -47,6 +47,14 @@ body:
       placeholder: "retro, webcore, terminal"
     validations:
       required: true
+  - type: input
+    id: button
+    attributes:
+      label: "88x32 button URL (optional)"
+      placeholder: "https://example.neocities.org/button.png"
+      description: "Optional classic 88x32 site button. Must be a direct https image URL."
+    validations:
+      required: false
   - type: dropdown
     id: platform
     attributes:

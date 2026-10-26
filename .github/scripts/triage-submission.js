@@ -18,6 +18,7 @@ function parseSubmission(body) {
     category: field(body, "Category"),
     tags: tagsRaw.split(",").map(t => t.trim()).filter(Boolean),
     platform: field(body, "Platform"),
+    button: field(body, "88x32 button URL (optional)"),
     confirmed: /- \[[xX]\]\s+This is a real/.test(field(body, "Confirm")),
   };
 }
@@ -48,6 +49,10 @@ function validate(s) {
   else if (!CATEGORIES.includes(s.category)) errors.push(`Category must be one of: ${CATEGORIES.join(", ")}.`);
   if (!s.tags.length) errors.push("At least one tag is required.");
   else if (s.tags.length > 20) errors.push("No more than 20 tags.");
+  if (s.button) {
+    try { const u = new URL(s.button); if (u.protocol !== "https:") errors.push("88x32 button URL must be https."); }
+    catch { errors.push("88x32 button URL must be a valid URL."); }
+  }
   if (!s.confirmed) errors.push("The confirmation checkbox must be checked.");
   return errors;
 }
@@ -123,6 +128,7 @@ async function run({ github, context, core }) {
     description: submission.description,
     category: submission.category,
     tags: submission.tags,
+    button: submission.button || null,
     source: "supplemental",
   };
 

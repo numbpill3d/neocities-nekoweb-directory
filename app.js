@@ -60,6 +60,7 @@ function card(site, i) {
     </div>
     <div class="body">
       <p class="desc">${escapeHtml(site.description || "")}</p>
+      ${site.button ? `<div class="site-button"><a href="${escapeAttr(site.url)}" target="_blank" rel="noopener"><img src="${escapeAttr(site.button)}" alt="${escapeAttr(site.name)} 88x32 button" width="88" height="32" loading="lazy"></a></div>` : ""}
       <div class="meta">${tags}</div>
     </div>
     <div class="foot">
@@ -71,6 +72,14 @@ function card(site, i) {
 
 function escapeHtml(s){ return String(s||"").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c])); }
 function escapeAttr(s){ return escapeHtml(s); }
+
+function renderButtonWall() {
+  const wall = document.getElementById("button-wall");
+  if (!wall) return;
+  const btns = state.sites.filter(s => s.button);
+  if (!btns.length) { wall.innerHTML = '<div class="empty">no buttons yet.</div>'; return; }
+  wall.innerHTML = btns.map(s => `<a href="${escapeAttr(s.url)}" target="_blank" rel="noopener" title="${escapeAttr(s.name)}"><img src="${escapeAttr(s.button)}" alt="${escapeAttr(s.name)}" width="88" height="32" loading="lazy"></a>`).join("");
+}
 
 function render() {
   const filtered = state.sites.filter(matches);
@@ -87,6 +96,7 @@ function render() {
   if(l2) l2.textContent=$("#shown-label").textContent;
   renderCategories();
   renderTags();
+  renderButtonWall();
   // highlight active tag
   $$("#tag-cloud .tag").forEach(el => {
     if (el.dataset.tag === state.tag) el.style.borderColor = "var(--amber)";
