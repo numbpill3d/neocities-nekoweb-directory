@@ -4,7 +4,11 @@
     "url": "https://neocities.org",
     "description": "The home of the free web. Host your own site, discover others, and keep the independent web alive.",
     "category": "hub",
-    "tags": ["neocities", "hosting", "indieweb"],
+    "tags": [
+      "neocities",
+      "hosting",
+      "indieweb"
+    ],
     "source": "supplemental"
   },
   {
@@ -12,7 +16,11 @@
     "url": "https://nekoweb.org",
     "description": "A free static site host for the modern web, with a friendly community and no ads.",
     "category": "hub",
-    "tags": ["nekoweb", "hosting", "indieweb"],
+    "tags": [
+      "nekoweb",
+      "hosting",
+      "indieweb"
+    ],
     "source": "supplemental"
   },
   {
@@ -20,7 +28,25 @@
     "url": "https://sadgrl.online",
     "description": "Resources, layouts, and guides for building personal sites in the indie web style.",
     "category": "resources",
-    "tags": ["neocities", "layouts", "indieweb"],
+    "tags": [
+      "neocities",
+      "layouts",
+      "indieweb"
+    ],
+    "source": "supplemental"
+  },
+  {
+    "name": "NOLOVE",
+    "url": "https://nolove.neocities.org",
+    "description": ".... a piece of the splicer Scorn......",
+    "category": "art",
+    "tags": [
+      "dark",
+      "surreal",
+      "schizo",
+      "lainon",
+      "art"
+    ],
     "source": "supplemental"
   }
 ]
