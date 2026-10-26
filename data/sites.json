@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-26T10:00:35+00:00",
-  "count": 4,
+  "generated_at": "2026-10-26T12:50:03+00:00",
+  "count": 5,
   "sites": [
     {
       "name": "Nekoweb",
@@ -14,7 +14,7 @@
       ],
       "source": "supplemental",
       "button": null,
-      "last_updated": "2026-10-26T10:00:35+00:00"
+      "last_updated": "2026-10-26T12:50:03+00:00"
     },
     {
       "name": "Neocities",
@@ -28,7 +28,7 @@
       ],
       "source": "supplemental",
       "button": null,
-      "last_updated": "2026-10-26T10:00:35+00:00"
+      "last_updated": "2026-10-26T12:50:02+00:00"
     },
     {
       "name": "NOLOVE",
@@ -45,6 +45,22 @@
       "source": "supplemental",
       "button": null,
       "last_updated": "Mon, 14 Sep 2026 22:42:11 GMT"
+    },
+    {
+      "name": "numbpilled",
+      "url": "https://numbpilled.neocities.org",
+      "description": "...",
+      "category": "personal",
+      "tags": [
+        "dark",
+        "brooding",
+        "blog",
+        "deep",
+        "surreal"
+      ],
+      "source": "supplemental",
+      "button": null,
+      "last_updated": "Mon, 26 Oct 2026 08:58:16 GMT"
     },
     {
       "name": "sadgrl.online",
