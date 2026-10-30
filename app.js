@@ -37,7 +37,7 @@ function renderTags() {
   for (const s of state.sites) for (const t of (s.tags || [])) tagCounts.set(t, (tagCounts.get(t) || 0) + 1);
   const top = [...tagCounts.entries()].sort((a,b)=>b[1]-a[1]).slice(0, 24);
   const box = $("#tag-cloud");
-  box.innerHTML = top.map(([t,n]) => `<span class="tag" data-tag="${t}">${t} <small>${n}</small></span>`).join(" ");
+  box.innerHTML = top.map(([t,n]) => `<span class="tag" data-tag="${escapeAttr(t)}">${escapeHtml(t)} <small>${n}</small></span>`).join(" ");
   box.querySelectorAll(".tag").forEach(el => {
     el.addEventListener("click", () => {
       const t = el.dataset.tag;
