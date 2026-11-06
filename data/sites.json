@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-11-06T14:13:24+00:00",
-  "count": 5,
+  "generated_at": "2026-11-06T19:42:31+00:00",
+  "count": 6,
   "sites": [
+    {
+      "name": "ambien",
+      "url": "https://ambien.neocities.org",
+      "description": "a m b i e n",
+      "category": "personal",
+      "tags": [
+        "surreal",
+        "html",
+        "liminal"
+      ],
+      "source": "supplemental",
+      "button": null,
+      "last_updated": "Sun, 28 Sep 2025 02:13:08 GMT"
+    },
     {
       "name": "Nekoweb",
       "url": "https://nekoweb.org",
@@ -14,7 +28,7 @@
       ],
       "source": "supplemental",
       "button": null,
-      "last_updated": "2026-11-06T14:13:23+00:00"
+      "last_updated": "2026-11-06T19:42:29+00:00"
     },
     {
       "name": "Neocities",
@@ -28,7 +42,7 @@
       ],
       "source": "supplemental",
       "button": null,
-      "last_updated": "2026-11-06T14:13:23+00:00"
+      "last_updated": "2026-11-06T19:42:29+00:00"
     },
     {
       "name": "NOLOVE",
@@ -44,7 +58,7 @@
       ],
       "source": "supplemental",
       "button": null,
-      "last_updated": "Mon, 14 Sep 2026 22:42:11 GMT"
+      "last_updated": "Fri, 06 Nov 2026 19:13:12 GMT"
     },
     {
       "name": "numbpilled",
