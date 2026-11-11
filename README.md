@@ -1,6 +1,9 @@
 # neocities / nekoweb directory
 
 a brutalist, auto-updating directory of Neocities and Nekoweb sites.
+
+![Neocities and Nekoweb directory](docs/screenshots/directory.png)
+
 macintosh chrome. linux rice. terminal bbs core.
 
 live: https://numbpill3d.github.io/neocities-nekoweb-directory/
