@@ -41,7 +41,7 @@ a:hover, a:focus-visible { background: var(--black); color: var(--white); outlin
 .window .titlebar { display: flex; align-items: center; gap: 7px; min-height: 22px; padding: 3px 6px; border-bottom: 1px solid var(--black); background-color: var(--mid); background-image: repeating-linear-gradient(0deg, transparent 0 2px, rgba(0,0,0,.13) 2px 3px); color: var(--black); font: 12px/1.3 var(--mac); font-weight: bold; }
 .window .titlebar .close { width: 11px; height: 11px; border: 1px solid var(--black); background: var(--white); }
 .window .body { padding: 9px; }
-.sidebar h3 { margin: 0 0 7px; padding-bottom: 5px; border-bottom: 1px solid var(--black); font: bold 11px var(--mac); text-transform: uppercase; }
+.sidebar h2 { margin: 0 0 7px; padding-bottom: 5px; border-bottom: 1px solid var(--black); font: bold 12px var(--mac); text-transform: uppercase; }
 .cat-list { list-style: none; padding: 0; margin: 0; }
 .cat-list li { display: flex; justify-content: space-between; padding: 3px 4px; cursor: pointer; }
 .cat-list li:hover, .cat-list li.active { background: var(--black); color: var(--white); }
