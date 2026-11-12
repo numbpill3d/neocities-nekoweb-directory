@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NEOCITIES/NEKOWEB DIRECTORY — retro webcore bbs</title>
+<title>ELSEWHERE INDEX — neocities / nekoweb directory</title>
 <meta name="description" content="A brutalist, auto-updating directory of Neocities and Nekoweb sites. Submit yours.">
 <link rel="stylesheet" href="./style.css">
 </head>
@@ -20,8 +20,9 @@
 </div>
 
 <header class="hero">
-  <h1>NEOCITIES / NEKOWEB DIRECTORY</h1>
-  <p class="sub">a brutalist, auto-updating index of the indie web. macintosh chrome, linux rice, terminal bbs core. submit your site. no ads. no tracking. just links.</p>
+  <h1 class="title-anim">ELSEWHERE INDEX</h1>
+  <p class="sub">a brutalist, auto-updating index of the indie web.</p>
+  <p class="sub2">for neocities + nekoweb sites · macintosh chrome · linux rice · terminal bbs core · no ads · no tracking · just links.</p>
   <p class="prompt">ls ./sites --sort=updated --filter=webcore</p>
   <div class="ascii">┌──────────────────────────────────────────────────────────────┐
 │  [A]ll  [N]eocities  [K]ekoweb  [R]etro  [T]erminal  [B]BS   │
@@ -66,10 +67,12 @@
   </aside>
 
   <main>
+    <h2 class="sr-only">Site directory</h2>
     <div class="search">
       <span class="caret">&gt;</span>
-      <input id="search" type="text" placeholder="search sites, tags, urls…" autocomplete="off">
-      <button id="clear" class="btn" style="padding:2px 8px;box-shadow:none;">clear</button>
+      <label for="search" class="sr-only">Search sites, tags, or URLs</label>
+      <input id="search" type="text" placeholder="search sites, tags, urls..." autocomplete="off">
+      <button id="clear" class="btn">clear</button>
     </div>
 
     <div class="stats">
@@ -94,7 +97,7 @@
       <p>no PR skills required. open an issue, fill the form, an action validates + opens a PR.</p>
       <ol>
         <li>Open <a href="https://github.com/numbpill3d/neocities-nekoweb-directory/issues/new?template=submit-site.yml" target="_blank" rel="noopener">Issues → New issue → "Submit a site"</a>.</li>
-        <li>Fill: site name, URL, description, category, tags, platform.</li>
+        <li>Fill: site name, URL, description, category, tags, platform. Optional: an 88x32 button URL.</li>
         <li>An action validates the URL, rejects duplicates, and adds the site automatically.</li>
         <li>A data refresh runs and the site appears in the directory.</li>
       </ol>
