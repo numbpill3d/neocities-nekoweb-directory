@@ -76,5 +76,18 @@
     ],
     "button": null,
     "source": "supplemental"
+  },
+  {
+    "name": "Madville",
+    "url": "https://madville.neocities.org/",
+    "description": "Personal write-ups on old movies and video games.",
+    "category": "blog",
+    "tags": [
+      "neocities",
+      "retro",
+      "html"
+    ],
+    "button": "https://madville.neocities.org/style/madville.gif",
+    "source": "supplemental"
   }
 ]
