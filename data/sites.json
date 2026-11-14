@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-13T14:30:57+00:00",
-  "count": 6,
+  "generated_at": "2026-11-14T06:26:14+00:00",
+  "count": 7,
   "sites": [
     {
       "name": "ambien",
@@ -17,6 +17,20 @@
       "last_updated": "Sun, 28 Sep 2025 02:13:08 GMT"
     },
     {
+      "name": "Madville",
+      "url": "https://madville.neocities.org",
+      "description": "Personal write-ups on old movies and video games.",
+      "category": "blog",
+      "tags": [
+        "neocities",
+        "retro",
+        "html"
+      ],
+      "source": "supplemental",
+      "button": "https://madville.neocities.org/style/madville.gif",
+      "last_updated": "Sun, 15 Jun 2025 11:49:01 GMT"
+    },
+    {
       "name": "Nekoweb",
       "url": "https://nekoweb.org",
       "description": "A free static site host for the modern web, with a friendly community and no ads.",
@@ -28,7 +42,7 @@
       ],
       "source": "supplemental",
       "button": null,
-      "last_updated": "2026-11-13T14:30:56+00:00"
+      "last_updated": "2026-11-14T06:26:13+00:00"
     },
     {
       "name": "Neocities",
@@ -42,7 +56,7 @@
       ],
       "source": "supplemental",
       "button": null,
-      "last_updated": "2026-11-13T14:30:56+00:00"
+      "last_updated": "2026-11-14T06:26:13+00:00"
     },
     {
       "name": "NOLOVE",
@@ -58,7 +72,7 @@
       ],
       "source": "supplemental",
       "button": null,
-      "last_updated": "Fri, 13 Nov 2026 09:44:01 GMT"
+      "last_updated": "Sat, 14 Nov 2026 02:27:57 GMT"
     },
     {
       "name": "numbpilled",
